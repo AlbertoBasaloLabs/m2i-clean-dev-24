@@ -8,9 +8,9 @@ interface ClientDTO {
 
 interface PaymentDTO {
   amount: number;
-  isDeferredPayment: boolean;
-  monthsDeferred: number;
-  isRecurredPayment: boolean;
+  isDeferred: boolean;
+  deferredMonths: number;
+  isRecurred: boolean;
 }
 
 interface CardDTO {

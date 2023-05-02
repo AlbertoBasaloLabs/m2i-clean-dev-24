@@ -9,12 +9,12 @@ export class Card {
   constructor(public readonly cardData: CardVO) {}
 
   isExpired() {
-    // 😏 impure logic dependent on context? encapsulated with it
+    // 😏 pure logic or dependent on context? encapsulated with it
     return this.cardData.getExpirationDate() < new Date();
   }
 
   checkCardLimit(amount: number) {
-    // 😏 impure and potentially complex logic? entity is your home
+    // 😏 impure or complex logic? entity is your home
     console.log(`get card limit online...`);
     const limit = 1000;
     if (amount > limit) {

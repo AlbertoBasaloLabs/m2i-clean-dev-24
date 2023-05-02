@@ -23,21 +23,21 @@ class PaymentVO {
   }
   constructor(
     amount: number,
-    public readonly isDeferredPayment: boolean,
-    public readonly monthsDeferred: number,
-    public readonly isRecurredPayment: boolean
+    public readonly isDeferred: boolean,
+    public readonly deferredMonths: number,
+    public readonly isRecurred: boolean
   ) {
     this.amount = amount;
-    if (isDeferredPayment && isRecurredPayment) {
+    if (isDeferred && isRecurred) {
       throw new Error("Payment can't be deferred and recurred");
     }
-    if (isDeferredPayment && monthsDeferred < 1) {
+    if (isDeferred && deferredMonths <= 0) {
       throw new Error("Months deferred must be greater than 0");
     }
   }
 }
 
-// ✅ add functionality to data (contruction, representation...)
+// ✅ add functionality to data (construction, representation...)
 
 class CardVO {
   public readonly number: string;

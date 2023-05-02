@@ -20,7 +20,7 @@ export class ClientAggregate {
   }
 }
 
-// 😏 a client(with his cars) with his payments
+// 😏 a client(with his cards) with his payments
 export class ClientPaymentsAggregate {
   // 😏 stores related data
   private payments: PaymentVO[] = [];
