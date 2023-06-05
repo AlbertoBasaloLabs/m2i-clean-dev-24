@@ -5,7 +5,7 @@ Demo project and documentation for the Clean Code course.
 > Clone, fork or use as a template repository for practicing.
 
 ```bash
-git clone https://github.com/AlbertoBasalo/clean-code your-project
+git clone https://github.com/AlbertoBasalo/clean-dev your-project
 cd your-project
 npm install
 ```
