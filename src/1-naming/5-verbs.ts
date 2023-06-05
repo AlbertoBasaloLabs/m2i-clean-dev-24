@@ -10,7 +10,7 @@ class Client {}
 // }
 
 // ✅
-function createClient(): object {
+function createClient(): Client {
   // 😏 a verb in a function tells what she does
   return new Client();
 }

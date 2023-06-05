@@ -4,7 +4,7 @@ function insInv() {
 }
 
 // ✅
-// function insertInvoice() {
-//   // 😏 easy to spot mistakes
-//   const createdAtTimestamp = new Date();
-// }
+function insertInvoice() {
+  // 😏 easy to spot mistakes
+  const createdAtTimestamp = new Date();
+}
