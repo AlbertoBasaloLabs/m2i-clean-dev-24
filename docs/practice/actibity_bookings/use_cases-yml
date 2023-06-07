@@ -5,30 +5,25 @@
 Minimum requirements for creating an activity:
 
 - A Title
-- A Location
 - A Date in the future
 - A non negative Price
-
-Default values for creating an activity:
-
-- A Status of "draft"
+- A Status ("draft", "published", "confirmed", "cancelled", "finished"")
 - A maximum Capacity of 10
 - A minimum Quorum of 5
-- An AgeCategory of "adult"
 
-## Publish an Activity
+## Update an Activity State
 
 If is in the "draft" status can be changed to 'published'.
-
-## Update an Activity
-
-Allow to change the following fields:
-
-- Description
-- AgeCategory
+When published allow to confirm or cancel, return to draft, mark as finished, etc
+When finished or cancelled, cannot be changed.
 
 ## Book an Activity
 
 If is in the "published" or "confirmed" status and has enough capacity, then the activity can be booked.
-
 If bookings reach the required quorum, then the activity status is changed to "confirmed".
+
+Minimum requirements for booking an activity:
+
+- A Name
+- A valid Email
+- A number of Seats
