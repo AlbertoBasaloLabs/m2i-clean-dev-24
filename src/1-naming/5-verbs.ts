@@ -1,20 +1,21 @@
-class Client {}
+class Client {
+  // 🤢 are you asking me?
+  allowed() {
+    return false;
+  }
+}
 // ❌
-// function client() {
-//   // 🤢 what are you doing with a client?
-//   return new Client();
-// }
-// function allowed() {
-//   // 🤢 are you asking me?
-//   return false;
-// }
-
-// ✅
-function createClient(): Client {
-  // 😏 a verb in a function tells what she does
+// 🤢 what are you doing with a client?
+function client() {
   return new Client();
 }
-function isAllowed(): boolean {
-  // 😏 is, has, can, must... help reading and understanding
-  return true;
-}
+
+// ✅
+//   // 😏 a verb in a function tells what she does
+// function createClient(): Client {
+//   return new Client();
+// }
+//   // 😏 is, has, can, must... help reading and understanding
+// function isAllowed(): boolean {
+//   return true;
+// }
