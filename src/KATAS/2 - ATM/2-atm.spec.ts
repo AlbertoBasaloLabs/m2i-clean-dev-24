@@ -1,6 +1,16 @@
 // FILEPATH: /d:/code/ab/clean-dev/tmp/2 - ATM/2-atm.test.ts
 import { ATM } from './2-atm';
 
+// ATM Kata
+// You need to program a robot to withdraw money from an ATM.
+// The ATM has 7 euro notes available: 5, 10, 20, 50, 100, 200 and 500.
+// The robot receives the amount to withdraw as input parameter.
+// The robot should return the correct notes to return the amount.
+// null if the amount cannot be dispensed with the available notes.
+// null if the amount is less than or equal to zero.
+// null if the amount is not a multiple of 5.
+// null if the amount cannot be dispensed with the available notes.
+
 describe('ATM', () => {
   let atm: ATM;
 

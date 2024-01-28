@@ -1,6 +1,6 @@
 // ? What is doing this code?
 
-// ! minimal criptic implementation
+// ! minimal cryptic implementation
 export class Caesar {
   encript(text: string, code: number): string {
     let res = "";
@@ -86,3 +86,5 @@ export class CaesarCipherExpressive {
 }
 
 // ToDo 2 : one nested level, early return, no else
+
+// ToDO 3 : structs to handle letter cases
