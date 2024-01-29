@@ -20,10 +20,10 @@ npm install
 
 ### 📚 Documentation
 
-- [Workflows for develop, test and deploy the practice](./docs/workflows.md)
-- [VS code Settings and Extensions for clean typescript](./docs/settings.md)
 - [Article series](./docs/articles.md)
-- [Artesano del código](./docs/artesano/index.md)
+- [Artesano del código](./docs/manifiesto-artesano/index.md)
+- [Refactoring Demos](./src/demos)
+- [Katas](./src/KATAS/)
 
 ---
 
