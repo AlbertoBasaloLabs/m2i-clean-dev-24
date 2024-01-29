@@ -98,3 +98,5 @@ export class AtmNames {
 }
 
 // ToDo 2 : one nested level, early return, no else
+
+// ToDO 3 : structs to validate amount, and the notes to return

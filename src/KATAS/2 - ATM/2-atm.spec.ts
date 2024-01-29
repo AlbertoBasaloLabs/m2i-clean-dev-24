@@ -1,7 +1,7 @@
 // npx jest 2-atm.spec --watch
 // import { ATM } from './2-atm';
-// import { AtmNames as ATM } from './2-atm';
-import { AtmFunctions as ATM } from "./2-atm";
+import { AtmNames as ATM } from "./2-atm";
+// import { AtmFunctions as ATM } from "./2-atm";
 
 // ATM Kata
 // You need to program a robot to withdraw money from an ATM.
