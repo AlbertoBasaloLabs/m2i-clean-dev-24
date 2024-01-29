@@ -1,6 +1,8 @@
 // npx jest 1-caesar-cipher.spec --watch
 
-// Caesar Cipher is a type of substitution cipher in which
+
+// Caesar Cipher Kata
+// This is a type of substitution cipher in which
 // Each letter in the plaintext is shifted a certain number of places down the alphabet.
 // For uppercase letters, with a shift of 1, A would be replaced by B, B would become C, and so on.
 // For lowercase letters, a would be replaced by b, b would become c, and so on.
