@@ -20,10 +20,10 @@ npm install
 
 ### 📚 Documentation
 
-- [Article series](./docs/articles.md)
 - [Artesano del código](./docs/manifiesto-artesano/index.md)
-- [Refactoring Demos](./src/demos)
-- [Katas](./src/KATAS/)
+- [Article series (written in English and TypeScript focused) ](./docs/articles.md)
+- [Refactoring Demos (in TypeScript)](./src/demos)
+- [Katas (TypeScript and C#)](./src/KATAS/)
 
 ---
 
