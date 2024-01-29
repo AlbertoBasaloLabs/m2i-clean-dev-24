@@ -7,7 +7,7 @@ function print(d: number) {
 }
 
 //  ✅
-// const days = 5;
-// function printSchedule(days: number) {
-//   console.log("your schedule for the next", days, "days");
-// }
+const days = 5;
+function printSchedule(days: number) {
+  console.log("your schedule for the next", days, "days");
+}

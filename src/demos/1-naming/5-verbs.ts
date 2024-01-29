@@ -11,11 +11,11 @@ function client() {
 }
 
 // ✅
-//   // 😏 a verb in a function tells what she does
-// function createClient(): Client {
-//   return new Client();
-// }
-//   // 😏 is, has, can, must... help reading and understanding
-// function isAllowed(): boolean {
-//   return true;
-// }
+// 😏 a verb in a function tells what she does
+function createClient(): Client {
+  return new Client();
+}
+// 😏 is, has, can, must... help reading and understanding
+function isAllowed(): boolean {
+  return true;
+}
