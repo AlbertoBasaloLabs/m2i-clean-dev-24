@@ -7,7 +7,7 @@ Demo project and documentation for the Clean Code course.
 > Clone, fork or use as a template repository for practicing.
 
 ```bash
-git clone https://github.com/AlbertoBasalo/m2i-clean_code_1
+git clone https://github.com/AlbertoBasaloLabs/m2i-clean_code_1
 cd m2i-clean_code_1
 npm install
 ```
