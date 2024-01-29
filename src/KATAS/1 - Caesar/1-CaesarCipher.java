@@ -1,4 +1,5 @@
 public class CaesarCipher {
+  
     public String Encrypt(String plainText, int shift) {
         StringBuilder encryptedText = new StringBuilder();
         int CASE_LENGTH = 26;
@@ -8,6 +9,7 @@ public class CaesarCipher {
         int LAST_LOWERCASE = FIRST_LOWERCASE + CASE_LENGTH - 1;
         for (int i = 0; i < plainText.length(); i++) {
             int currentChar = (int)plainText.charAt(i);
+            // determine if is a character
             int base = 0;
             if (currentChar >= FIRST_UPPERCASE && currentChar <= LAST_UPPERCASE) {
                 base = FIRST_UPPERCASE;
