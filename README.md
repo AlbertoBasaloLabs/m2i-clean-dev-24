@@ -1,12 +1,14 @@
 # Clean Code course material
 
+## M2i Jauary 2024
+
 Demo project and documentation for the Clean Code course.
 
 > Clone, fork or use as a template repository for practicing.
 
 ```bash
-git clone https://github.com/AlbertoBasalo/clean-dev your-project
-cd your-project
+git clone https://github.com/AlbertoBasalo/m2i-clean-dev-24
+cd m2i-clean-dev-24
 npm install
 ```
 
