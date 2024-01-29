@@ -1,19 +1,25 @@
-public class C {
-    public String E(String t, int s) {
-        StringBuilder r = new StringBuilder();
-        for (int i = 0; i < t.length(); i++) {
-            int c = (int)t.charAt(i);
-            int b = 0;
-            if (c >= 65 && c <= 90) {
-                b = 65;
-            } else if (c >= 97 && c <= 122) {
-                b = 97;
+public class CaesarCipher {
+    public String Encrypt(String plainText, int shift) {
+        StringBuilder encryptedText = new StringBuilder();
+        int CASE_LENGTH = 26;
+        int FIRST_UPPERCASE = 65;
+        int LAST_UPPERCASE = FIRST_UPPERCASE + CASE_LENGTH - 1;
+        int FIRST_LOWERCASE = 65;
+        int LAST_LOWERCASE = FIRST_LOWERCASE + CASE_LENGTH - 1;
+        for (int i = 0; i < plainText.length(); i++) {
+            int currentChar = (int)plainText.charAt(i);
+            int base = 0;
+            if (currentChar >= FIRST_UPPERCASE && currentChar <= LAST_UPPERCASE) {
+                base = FIRST_UPPERCASE;
+            } else if (currentChar >= FIRST_LOWERCASE && currentChar <= LAST_LOWERCASE) {
+                base = FIRST_LOWERCASE;
             }
-            if (b != 0) {
-                c = ((c - b + s) % 26) + b;
+            boolean isCharacter = base !=0;
+            if (isCharacter) {
+                currentChar = ((currentChar - base + shift) % CASE_LENGTH) + base;
             }
-            r.append((char)c);
+            encryptedText.append((char)currentChar);
         }
-        return r.toString();
+        return encryptedText.toString();
     }
 }
