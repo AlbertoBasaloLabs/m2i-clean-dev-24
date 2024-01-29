@@ -1,6 +1,6 @@
 # Clean Code course material
 
-## M2i Jauary 2024
+## M2i January 2024
 
 Demo project and documentation for the Clean Code course.
 
