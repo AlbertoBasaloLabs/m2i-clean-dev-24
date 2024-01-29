@@ -10,9 +10,9 @@
 // For example, with a shift of 1, Z would become A, and z would become a.
 // For any other character, the output is the same as the input.
 
-// import { Caesar as CaesarCipher } from "./1-caesar-cipher";
+import { Caesar as CaesarCipher } from "./1-caesar-cipher";
 // import { CaesarCipher } from "./1-caesar-cipher";
-import { CaesarCipherExpressive as CaesarCipher } from "./1-caesar-cipher";
+// import { CaesarCipherExpressive as CaesarCipher } from "./1-caesar-cipher";
 
 
 describe("cipherCaesar", () => {

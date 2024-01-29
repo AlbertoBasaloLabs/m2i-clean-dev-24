@@ -1,4 +1,4 @@
-// usar para simplificar funciones, anidamiento...
+// ? simplify this code
 
 // ! dirty implementation
 
