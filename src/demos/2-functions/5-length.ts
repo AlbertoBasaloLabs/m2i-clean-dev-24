@@ -17,7 +17,7 @@ function getTripSeason(trip: any) {
 // ❌
 function calculateDiscount(booking: any) {
   // 🤢 how is this working?
-  // 🤢 how can I test it?
+  // 🤢 needs 4 dependencies how can I test it?
   let discount = 0;
   if (booking.passengers.length > 2) {
     discount += 5;
