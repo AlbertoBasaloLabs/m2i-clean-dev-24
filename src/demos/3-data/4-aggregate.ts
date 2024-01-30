@@ -6,7 +6,10 @@ import { Card, Payment } from "./3-entity";
 export class ClientAggregate {
   public readonly cards: Card[] = [];
 
-  constructor(public readonly client: Client, private preferredCard: Card) {}
+  constructor(
+    public readonly client: Client,
+    private preferredCard: Card
+  ) {}
 
   addCard(card: Card, isPreferred: boolean) {
     // 😏 ensures that the client always has a card marked as preferred
@@ -31,7 +34,7 @@ export class ClientPaymentsAggregate {
   performPayment(payment: Payment) {
     const card = this.client.getPreferredCard();
     payment.payWithCard(card);
-    this.payments.push(payment.data);
+    this.payments.push(payment.paymentData);
   }
   getPayments() {
     return [...this.payments];

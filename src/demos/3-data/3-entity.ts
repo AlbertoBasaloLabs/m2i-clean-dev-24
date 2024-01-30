@@ -25,7 +25,7 @@ export class Card {
 }
 
 export class Payment {
-  constructor(public readonly data: PaymentVO) {}
+  constructor(public readonly paymentData: PaymentVO) {}
 
   payWithCard(card: Card) {
     // 😏 an entity can use other entities
@@ -33,7 +33,7 @@ export class Payment {
     if (card.isExpired()) {
       throw new Error(`Card ${cardMasked} is expired`);
     }
-    card.checkCardLimit(this.data.amount);
-    console.log(`Charged ${this.data.amount} on card ${cardMasked}`);
+    card.checkCardLimit(this.paymentData.amount);
+    console.log(`Charged ${this.paymentData.amount} on card ${cardMasked}`);
   }
 }
