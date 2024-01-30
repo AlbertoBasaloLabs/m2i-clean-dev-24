@@ -18,3 +18,36 @@ function sendTripDetails() {
 function getPassengers() {
   return [];
 }
+
+function DoOneThing(a: string): number {
+  return 0;
+}
+
+function DoOtherThing(x: number): boolean {
+  return false;
+}
+
+function main() {
+  const first = DoOneThing("hola");
+  console.log(first);
+  DoOtherThing(first);
+}
+
+miTexto.trim().normalize().consonantes().length();
+
+var clientes = null;
+var facturas;
+function getClientes("", OnGetClients);
+
+function OnGetClients(error, data) {
+
+  if (error) {
+      
+  }
+  if (data) {
+    clientes = data;
+    getFacturas("", (e, d) => { 
+
+    } )
+  }
+}

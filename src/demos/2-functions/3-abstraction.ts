@@ -10,6 +10,7 @@ function getAvailablePlaces(tripId: string) {
   const OVERBOOKING_FACTOR = 1.05;
   return free * OVERBOOKING_FACTOR;
 }
+
 class Database {
   select(query: string) {
     return 0;
