@@ -1,6 +1,6 @@
 public class MainCleanCode {
   public static void main(String[] args) {
-    // TODO Auto-generated method stub 	}
+
     private static int CASE_LENGTH = 26;
     private static int FIRST_UPPERCASE = 65;
     private static int LAST_UPPERCASE = FIRST_UPPERCASE + CASE_LENGTH - 1;
@@ -19,14 +19,15 @@ public class MainCleanCode {
       }
       return encryptedText.toString();
     }
+
     private int encryptCharCode(int base, int currentCharCode, int shift) {
-      if (base == 0)
-        return currentCharCode;
+      if (base == 0) return currentCharCode;
       int shifted = currentCharCode - base + shift;
-      int normaliced = shifted % CASE_LENGTH;
-      int encrypted = normaliced + base;
+      int normalized = shifted % CASE_LENGTH;
+      int encrypted = normalized + base;
       return encrypted;
     }
+
     private int getBase(int currentCharCode) {
       int base = 0;
       if (currentCharCode >= FIRST_UPPERCASE
