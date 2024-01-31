@@ -18,5 +18,10 @@
     "titleBar.inactiveBackground": "#61dafb99",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#61dafb"
+  "peacock.color": "#61dafb",
+  "editor.fontSize": 14,
+  "window.zoomLevel": 2,
+  "workbench.colorTheme": "Default Light Modern",
+  "editor.fontFamily": "'Monaspace Argon','Fira Code', 'Cascadia Mono PL', Consolas, 'Courier New', monospace",
+  "editor.tabSize": 2
 }

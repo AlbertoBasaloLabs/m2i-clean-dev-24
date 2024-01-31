@@ -31,7 +31,7 @@ export class Payment {
   }
 
   validate(): boolean {
-    if (this.isDeferred && this.amount > 0 && this.deferredMonths?.value > 0) {
+    if (this.isDeferred && this.amount > 0 && this.deferredMonths.value > 0) {
       return true;
     }
     return false;
@@ -40,7 +40,7 @@ export class Payment {
 
 export class Months {
   private months: number;
-  public value() {
+  public get value() {
     return this.months;
   }
   constructor(months: number) {
