@@ -186,10 +186,10 @@ export class CaesarCipherData {
     let zeroBasedCase = plainChar.code - caseStart.code;
     let offsetShift = zeroBasedCase + this.offset;
     let normalizedShift = offsetShift % this.CASE_LENGTH;
-    let encriptedCode = normalizedShift + caseStart.code;
-    let encriptedLetter = new Letter();
-    encriptedLetter.code = encriptedCode;
-    return encriptedLetter;
+    let encryptedCode = normalizedShift + caseStart.code;
+    let encryptedLetter = new Letter();
+    encryptedLetter.code = encryptedCode;
+    return encryptedLetter;
   }
 
 }
