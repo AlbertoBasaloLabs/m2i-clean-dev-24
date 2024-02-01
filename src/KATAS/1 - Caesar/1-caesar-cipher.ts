@@ -1,8 +1,8 @@
 // ? What is doing this code?
 
 // ! minimal cryptic implementation
-export class CaesarCipher {
-  encrypt(text: string, code: number): string {
+export class Caesar {
+  encript(text: string, code: number): string {
     let res = "";
     for (let i = 0; i < text.length; i++) {
       let char = text.charCodeAt(i);
@@ -22,8 +22,6 @@ export class CaesarCipher {
 }
 
 // ToDo 1 -No magic numbers, no magic strings, no magic expressions
-
-// With good names, the code is self-explanatory:
 
 export class CaesarCipherNames {
   private readonly CASE_LENGTH = 26;
@@ -102,14 +100,98 @@ export class CaesarCipherFunctions {
     let zeroBasedCase = plainChar - caseStart;
     let offsetShift = zeroBasedCase + offset;
     let normalizedShift = offsetShift % this.CASE_LENGTH;
-    let encryptedChar = normalizedShift + caseStart;
-    return encryptedChar;
+    let encriptedChar = normalizedShift + caseStart;
+    return encriptedChar;
   }
-
 }
 
 // ToDo 3 : structs to handle letter cases, strings char codes and shifts...
 
+// class LetterCase {
+//   first: Letter;
+//   last: Letter;
+
+//   constructor(first: Letter, length: number = 26) {
+//     this.first = first;
+//     this.last = new Letter();
+//     this.last.code = first.code + length - 1;
+//   }
+//   isInRange(letter: Letter): boolean {
+//     return letter.code >= this.first.code && letter.code <= this.last.code;
+//   }
+// }
+
+// class Letter {
+//   #code: number = 0;
+//   #char: string;
+
+//   set code(code: number) {
+//     this.#code = code;
+//     this.#char = String.fromCharCode(code);
+//   }
+//   get code(): number {
+//     return this.#code;
+//   }
+
+//   set char(char: string) {
+//     this.#char = char;
+//     this.#code = char.charCodeAt(0);
+//   }
+//   get char(): string {
+//     return this.#char;
+//   }
+
+//   constructor(char?: string) {
+//     if (char) {
+//       this.char = char;
+//     }
+//   }
+// }
+
+// export class CaesarCipherData {
+//   private readonly CASE_LENGTH = 26;
+//   private readonly UPPERCASE = new LetterCase(new Letter("A"), this.CASE_LENGTH);
+//   private readonly LOWERCASE = new LetterCase(new Letter("a"), this.CASE_LENGTH);
+//   private offset: number;
+
+//   // ? change public interface by using an struct {plainText, offset}
+
+//   encrypt(plainText: string, offset: number): string {
+//     this.offset = offset;
+//     let encryptedText = "";
+//     for (let position = 0; position < plainText.length; position++) {
+//       let currentLetter = new Letter(plainText[position]);
+//       let encryptedLetter = this.shift(currentLetter);
+//       encryptedText += encryptedLetter.char;
+//     }
+//     return encryptedText;
+//   }
+
+//   private getCaseStart(plainLetter: Letter): Letter {
+//     if (this.UPPERCASE.isInRange(plainLetter)) {
+//       return this.UPPERCASE.first;
+//     }
+//     if (this.LOWERCASE.isInRange(plainLetter)) {
+//       return this.LOWERCASE.first;
+//     }
+//     return new Letter();
+//   }
+
+//   private shift(plainChar: Letter): Letter {
+//     let caseStart: Letter = this.getCaseStart(plainChar);
+//     if (caseStart.code === 0) return plainChar;
+//     let zeroBasedCase = plainChar.code - caseStart.code;
+//     let offsetShift = zeroBasedCase + this.offset;
+//     let normalizedShift = offsetShift % this.CASE_LENGTH;
+//     let encriptedCode = normalizedShift + caseStart.code;
+//     let encriptedLetter = new Letter();
+//     encriptedLetter.code = encriptedCode;
+//     return encriptedLetter;
+//   }
+
+// }
+
+// ToDo 4 : class logic
 class LetterCase {
   first: Letter;
   last: Letter;
@@ -117,28 +199,29 @@ class LetterCase {
   constructor(first: Letter, length: number = 26) {
     this.first = first;
     this.last = new Letter();
-    this.last.code = first.code + length - 1;
+    this.last.charCode = first.charCode + length - 1;
   }
   isInRange(letter: Letter): boolean {
-    return letter.code >= this.first.code && letter.code <= this.last.code;
+    return letter.charCode >= this.first.charCode && letter.charCode <= this.last.charCode;
   }
 }
 
 class Letter {
-  private _code: number = 0;
-  private _char: string = "";
+  private readonly CASE_LENGTH = 26;
+  private _charCode: number = 0;
+  private _char: string = '';
 
-  set code(code: number) {
-    this._code = code;
-    this._char = String.fromCharCode(code);
+  set charCode(charCode: number) {
+    this._charCode = charCode;
+    this._char = String.fromCharCode(charCode);
   }
-  get code(): number {
-    return this._code;
+  get charCode(): number {
+    return this._charCode;
   }
 
   set char(char: string) {
     this._char = char;
-    this._code = char.charCodeAt(0);
+    this._charCode = char.charCodeAt(0);
   }
   get char(): string {
     return this._char;
@@ -149,23 +232,28 @@ class Letter {
       this.char = char;
     }
   }
+
+  public shift(offset: number, caseStart: Letter) {
+    if (caseStart.charCode === 0) return;
+    let zeroBasedCase = this.charCode - caseStart.charCode;
+    let offsetShift = zeroBasedCase + offset;
+    let normalizedShift = offsetShift % this.CASE_LENGTH;
+    let encriptedChar = normalizedShift + caseStart.charCode;
+    this.charCode = encriptedChar;
+  }
 }
 
-export class CaesarCipherData {
+export class CaesarCipherObjects {
   private readonly CASE_LENGTH = 26;
   private readonly UPPERCASE = new LetterCase(new Letter("A"), this.CASE_LENGTH);
   private readonly LOWERCASE = new LetterCase(new Letter("a"), this.CASE_LENGTH);
-  private offset: number = 1;
-
-  // ? change public interface by using an struct {plainText, offset}
 
   encrypt(plainText: string, offset: number): string {
-    this.offset = offset;
     let encryptedText = "";
     for (let position = 0; position < plainText.length; position++) {
       let currentLetter = new Letter(plainText[position]);
-      let encryptedLetter = this.shift(currentLetter);
-      encryptedText += encryptedLetter.char;
+      currentLetter.shift(offset, this.getCaseStart(currentLetter));
+      encryptedText += currentLetter.char;
     }
     return encryptedText;
   }
@@ -179,17 +267,4 @@ export class CaesarCipherData {
     }
     return new Letter();
   }
-
-  private shift(plainChar: Letter): Letter {
-    let caseStart: Letter = this.getCaseStart(plainChar);
-    if (caseStart.code === 0) return plainChar;
-    let zeroBasedCase = plainChar.code - caseStart.code;
-    let offsetShift = zeroBasedCase + this.offset;
-    let normalizedShift = offsetShift % this.CASE_LENGTH;
-    let encryptedCode = normalizedShift + caseStart.code;
-    let encryptedLetter = new Letter();
-    encryptedLetter.code = encryptedCode;
-    return encryptedLetter;
-  }
-
 }
